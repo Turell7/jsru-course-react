@@ -1,0 +1,63 @@
+/* Общие стили для основного контейнера */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  padding: 20px;
+  margin: 0;
+}
+
+/* Заголовок страницы */
+h1 {
+  color: #333;
+  text-align: center;
+}
+
+/* Стили блока для каждого ресторана */
+.restaurant-block {
+  background-color: white;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Заголовки ресторанов */
+.restaurant-block h2 {
+  color: #ea5d60;
+  border-bottom: 2px solid #eeeeee;
+  padding-bottom: 5px;
+}
+
+/* Список блюд и отзывов */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Элемент списка блюд */
+.restaurant-block ul li {
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  background-color: #f9f9f9;
+}
+
+/* Вложенный список для ингредиентов */
+.restaurant-block ul li ul {
+  margin-top: 5px;
+}
+
+/* Элемент списка ингредиентов */
+.restaurant-block ul li ul li {
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+/* Стиль для отзывов */
+.restaurant-block .review {
+  border-left: 4px solid #ea5d60;
+  padding-left: 10px;
+  margin-top: 10px;
+}
