@@ -5,7 +5,7 @@ import { restaurants } from './mock.js'
 ReactDOM.createRoot(document.getElementById('root')).render(
 <div>
     <h1>Restaurants</h1>
-    <div>
+    <div className='restaurant-block'>
     {restaurants.map((restaurant) => (
       <div key={restaurant.id}>
         <h2>{restaurant.name}</h2>
