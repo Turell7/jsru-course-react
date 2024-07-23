@@ -7,5 +7,5 @@
 
 ### Branches:
 
-- lecture-2-hw
--
+- lecture-2-hw (ДЗ1)
+- homework-2 (ДЗ2)
