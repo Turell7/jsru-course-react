@@ -1,0 +1,11 @@
+.star {
+  cursor: pointer;
+  font-size: 25px;
+  color: grey; /* Серый цвет для неактивных звезд */
+}
+
+.filled {
+  cursor: pointer;
+  font-size: 25px;
+  color: gold; /* Желтый цвет для активных звезд */
+}

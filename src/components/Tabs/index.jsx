@@ -8,7 +8,11 @@ export const Tabs = ({ children }) => {
     const handleClick = (index) => {
       setActiveTab(index);
     };
-  
+
+    const elActiveTab = React.Children.toArray(children).find((child, index) => index === activeTab)
+    ? <Tab>{React.Children.toArray(children).find((child, index) => index === activeTab).props.children}</Tab>
+    : null
+
     return (
       <div>
         <ul className={styles.tabs}>
@@ -18,16 +22,12 @@ export const Tabs = ({ children }) => {
               className={activeTab === index ? styles.active : ''}
               onClick={() => handleClick(index)}
             >
-                {console.log({activeTab})}
-                {console.log({index})}
               {child.props.title}
             </li>
           ))}
         </ul>
         <div className={styles.tab_content}>
-          {React.Children.map(children, (child, index) =>
-            activeTab === index ? <Tab>{child.props.children}</Tab> : null
-          )}
+          { elActiveTab }
         </div>
       </div>
     );

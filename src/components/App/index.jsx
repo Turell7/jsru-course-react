@@ -6,7 +6,7 @@ export const App = () => {
 
     return (
         <Layout>
-            <Restaurant items={restaurants}/>
+            <Restaurant restaurants={restaurants}/>
         </Layout>
     )
 }
