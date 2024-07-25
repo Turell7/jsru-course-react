@@ -1,6 +1,6 @@
-import { Menu } from "../Menu";
-import { Review } from "../Review";
-import { Tabs } from "../Tabs";
+import { Menu } from "../Menu"
+import { Review } from "../Review"
+import { Tabs } from "../Tabs"
 import styles from './styles.module.css'
 
 export const Restaurant = ({ restaurants }) => {

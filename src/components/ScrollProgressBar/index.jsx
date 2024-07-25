@@ -1,30 +1,24 @@
 import { useEffect } from "react"
 import { useState } from "react"
+import { throttle } from "throttle-debounce"
+import styles from "./styles.module.css"
 
 export const ScrollProgressBar = () => {
     const [progress, setProgress] = useState()
-    const handleScroll = () => {
+    const handleScroll = throttle(20, () => {
         const totalHeight = document.body.scrollHeight - window.innerHeight
         const progressHeight = (window.pageYOffset / totalHeight) * 100
         setProgress(progressHeight)
-    }
+    } )
 
     useEffect(() => {
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+        window.addEventListener("scroll", handleScroll)
+        return () => window.removeEventListener("scroll", handleScroll)
+    }, [])
 
     return (
-        <div
-            style={{
-                position: 'fixed',
-                top: 0,
-                left: 0,
-                width: `${progress}%`,
-                height: '5px',
-                backgroundColor: 'red',
-                zIndex: 9999,
-            }}
+        <div className={styles.progressBar}
+        style={{ width: `${progress}%` }}
         ></div>
     )
 } 
