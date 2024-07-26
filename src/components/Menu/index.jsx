@@ -1,5 +1,3 @@
-// import { MenuItem } from "../menuItem"
-
 import { MenuItem } from "../MenuItem"
 
 export const Menu = ({ menu }) => {

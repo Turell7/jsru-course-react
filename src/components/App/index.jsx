@@ -1,12 +1,12 @@
 import { restaurants } from '../../mock.js'
-import { Restaurant } from '../Restaurant/index.jsx'
+import { Restaurants } from '../Restaurants/index.jsx'
 import { Layout } from '../layout/index.jsx'
 
 export const App = () => {
 
     return (
         <Layout>
-            <Restaurant items={restaurants}/>
+            <Restaurants restaurants={restaurants}/>
         </Layout>
     )
 }

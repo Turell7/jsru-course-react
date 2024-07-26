@@ -1,14 +1,11 @@
-import { useCount } from '../../hooks/useCount.js'
+import { CounterContainer } from '../Counter/container.jsx'
 import { Ingredient } from '../Ingredient/index.jsx'
 
 export const MenuItem = ({ item }) => {
-    const { count, increment, decrement } = useCount()
     return (
         <li>
             {item.name} - ${item.price}
-            <button onClick={decrement}>-</button>
-            {count}
-            <button onClick={increment}>+</button>
+            <CounterContainer/>
             <Ingredient ingredients={item.ingredients}/>
         </li>
     )
