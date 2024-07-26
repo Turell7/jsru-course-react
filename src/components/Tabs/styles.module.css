@@ -1,0 +1,18 @@
+.tabs li {
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #ccc;
+  display: inline-block;
+  background: #f0f0f0;
+}
+
+.tabs li.active {
+  background: #fff;
+  border-bottom: none;
+}
+
+.tab_content {
+  border: 1px solid #ccc;
+  padding: 10px;
+  background: #fff; /* Одинаковый фон с активной вкладкой для связности дизайна */
+}
