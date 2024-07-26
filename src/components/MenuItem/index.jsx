@@ -1,11 +1,11 @@
-import { Counter } from '../Counter/index.jsx'
+import { CounterContainer } from '../Counter/container.jsx'
 import { Ingredient } from '../Ingredient/index.jsx'
 
 export const MenuItem = ({ item }) => {
     return (
         <li>
             {item.name} - ${item.price}
-            <Counter/>
+            <CounterContainer/>
             <Ingredient ingredients={item.ingredients}/>
         </li>
     )

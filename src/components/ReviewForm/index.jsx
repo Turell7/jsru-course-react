@@ -1,30 +1,11 @@
-import { useReducer } from "react"
+import { Counter } from "../Counter"
 import { RatingStars } from "../RatingStars"
-
-const INITIAL_FORM = {
-    name: '',
-    text: '',
-    rating: 0,
-}
-    
-function reducer(state, { type, payload }) {
-    switch (type) {
-        case "setName":
-            return { ...INITIAL_FORM, name: payload }
-        case "setText":
-            return { ...state, text: payload }
-        case "setRating":
-            return {...state, rating: payload }
-        case "clear":
-            return INITIAL_FORM
-        default:
-            return state
-    }
-}
+import { useForm } from "./hooks"
+import styles from "./styles.module.css"
 
 export const ReviewForm = () => {
-const [form, dispatch] = useReducer(reducer, INITIAL_FORM)
-const { name, text, rating } = form;
+    const [form, dispatch] = useForm()
+    const { name, text, rating } = form
 
     return (
         <div>
@@ -40,7 +21,18 @@ const { name, text, rating } = form;
                     dispatch({ type: "setText", payload: event.target.value })
                 }}/>
             </div>
-            <RatingStars rating={rating} dispatch={dispatch}/>
+            <div className={styles.ratings_container}>
+                <span>Rating</span>
+            <Counter value={rating} increment={() => {
+                    dispatch({ type: "incrementRating" })
+                }} decrement={() => {
+                    dispatch({ type: "decrementRating" })
+                }}/>
+            <RatingStars
+                rating={rating}
+                changeRating={(rate) => { dispatch({ type: "setRating", payload: rate})}}
+                />
+            </div>
             <button onClick={() => dispatch({ type: "clear"})}>Save</button>
             <button onClick={() => dispatch({ type: "clear"})}>Clear</button>
         </div>

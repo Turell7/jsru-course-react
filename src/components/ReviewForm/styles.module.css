@@ -1,0 +1,9 @@
+.ratings_container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ratings_container span {
+  margin-right: 2px;
+}
