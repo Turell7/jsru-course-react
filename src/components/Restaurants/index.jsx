@@ -3,7 +3,7 @@ import { Review } from "../Review"
 import { Tabs } from "../Tabs"
 import styles from './styles.module.css'
 
-export const Restaurant = ({ restaurants }) => {
+export const Restaurants = ({ restaurants }) => {
     return (
       <div className={styles.restaurant_block}>
         <Tabs>

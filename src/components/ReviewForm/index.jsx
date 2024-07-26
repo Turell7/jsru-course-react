@@ -28,7 +28,10 @@ export const ReviewForm = () => {
                 }} decrement={() => {
                     dispatch({ type: "decrementRating" })
                 }}/>
-            <RatingStars rating={rating} dispatch={dispatch}/>
+            <RatingStars
+                rating={rating}
+                changeRating={(rate) => { dispatch({ type: "setRating", payload: rate})}}
+                />
             </div>
             <button onClick={() => dispatch({ type: "clear"})}>Save</button>
             <button onClick={() => dispatch({ type: "clear"})}>Clear</button>

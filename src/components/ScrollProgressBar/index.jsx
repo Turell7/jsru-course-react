@@ -4,7 +4,7 @@ import { throttle } from "throttle-debounce"
 import styles from "./styles.module.css"
 
 export const ScrollProgressBar = () => {
-    const [progress, setProgress] = useState()
+    const [progress, setProgress] = useState('0')
     const handleScroll = throttle(20, () => {
         const totalHeight = document.body.scrollHeight - window.innerHeight
         const progressHeight = (window.pageYOffset / totalHeight) * 100
