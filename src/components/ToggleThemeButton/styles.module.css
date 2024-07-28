@@ -1,0 +1,18 @@
+.button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.dark svg {
+  width: 24px;
+  height: 24px;
+  fill: #aaa;
+  transition: fill 0.3s ease;
+}
+
+.light svg {
+  width: 24px;
+  height: 24px;
+  fill: #ffd700;
+}
