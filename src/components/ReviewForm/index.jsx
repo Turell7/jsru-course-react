@@ -1,3 +1,4 @@
+import { Button } from "../Button"
 import { Counter } from "../Counter"
 import { RatingStars } from "../RatingStars"
 import { useForm } from "./hooks"
@@ -33,8 +34,8 @@ export const ReviewForm = () => {
                 changeRating={(rate) => { dispatch({ type: "setRating", payload: rate})}}
                 />
             </div>
-            <button onClick={() => dispatch({ type: "clear"})}>Save</button>
-            <button onClick={() => dispatch({ type: "clear"})}>Clear</button>
+            <Button onClick={() => dispatch({ type: "clear"})}>Save</Button>
+            <Button onClick={() => dispatch({ type: "clear"})}>Clear</Button>  
         </div>
     )
 }
