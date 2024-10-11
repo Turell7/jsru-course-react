@@ -1,36 +1,29 @@
-import React, { useState } from 'react'
 import styles from './styles.module.css'
 import classNames from 'classnames'
 
-export const Tabs = ({ children }) => {
-    const [activeTab, setActiveTab] = useState(0)
-    const tabsArray = React.Children.toArray(children)
-  
+export const Tabs = ({ children, tabsName, activeTab, setActiveTab }) => {
     const handleClick = (index) => {
       setActiveTab(index)
     }
 
-    const elActiveTab = tabsArray.find((child, index) => index === activeTab)
-    ? <div>{tabsArray.find((child, index) => index === activeTab).props.children}</div>
-    : null
-
     return (
       <div>
         <ul>
-          { tabsArray.map((child, index) => (
+          { tabsName.map(( item ) => (
             <li
-              key={index}
+              key={item.id}
               className={classNames(
                 styles.tab,
-                {[styles.active]: activeTab === index})}
-              onClick={() => handleClick(index)}
+                {[styles.active]: activeTab === item.id})}
+              onClick={() => {handleClick(item.id)
+              }}
             >
-              {child.props.title}
+              {item.name}
             </li>
           ))}
         </ul>
         <div className={styles.contentTab}>
-          { elActiveTab }
+          {children}
         </div>
       </div>
     )

@@ -1,20 +1,23 @@
 import { createContext } from 'react'
-import { restaurants } from '../../mock.js'
-import { Restaurants } from '../Restaurants/index.jsx'
 import { Layout } from '../layout/index.jsx'
 import { ThemeContextProvider } from '../ThemeContext/index.jsx'
 import { UserContextProvider } from '../UserContext/index.jsx'
+import { store } from '../../redux/index.js'
+import { Provider } from 'react-redux'
+import { RestaurantsContainer } from '../Restaurants/container.jsx'
 
 export const ThemeContext = createContext()
 
 export const App = () => {
     return (
-        <ThemeContextProvider>
-            <UserContextProvider>
-            <Layout>
-                <Restaurants restaurants={restaurants}/>
-            </Layout>
-            </UserContextProvider>
-        </ThemeContextProvider>
+        <Provider store={store}>
+            <ThemeContextProvider>
+                <UserContextProvider>
+                    <Layout>
+                        <RestaurantsContainer/>
+                    </Layout>
+                </UserContextProvider>
+            </ThemeContextProvider>
+        </Provider>
     )
 }

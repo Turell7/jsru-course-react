@@ -1,12 +1,12 @@
 import { MenuItem } from "../MenuItem"
 
-export const Menu = ({ menu }) => {
+export const Menu = ({ ids }) => {
     return (
         <>
             <h3>Menu:</h3>
             <ul>
-            {Boolean(menu?.length) && menu.map((item) => (
-                <MenuItem key={item.id} item={item}/>
+            {Boolean(ids?.length) && ids.map((id) => (
+                <MenuItem key={id} id={id}/>
             ))}
             </ul>
         </>
