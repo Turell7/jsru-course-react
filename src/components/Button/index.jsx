@@ -1,5 +1,6 @@
+import { useTheme } from '../ThemeContext/hooks'
 import styles from './styles.module.css'
-import { useTheme } from '../ThemeContext'
+
 export const Button = ({children, onClick}) => {
     const { value: theme} = useTheme()
 return (

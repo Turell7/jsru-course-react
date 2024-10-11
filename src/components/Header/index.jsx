@@ -1,19 +1,19 @@
 import { TooggleThemeButton } from "../ToggleThemeButton"
-import { useUser } from "../UserContext"
+import { useUser } from "../UserContext/hooks"
 import { Button } from "../Button"
 
 export const Header = () => {
-    const { user, login, logout} = useUser()
+    const { isAuthorized, userName, login, logout} = useUser()
 
     return <header>
         <TooggleThemeButton/>
-        {user ? (
+        {isAuthorized ? (
         <>
-          <Button onClick={logout}>Выйти</Button>
-          <span>{user.name}</span>
+          <Button onClick={logout}>Logout</Button>
+          <span>{userName}</span>
         </>
       ) : (
-        <Button onClick={() => login('Иван')}>Войти</Button>
+        <Button onClick={() => login('Ivan')}>Login</Button>
       )}
     </header>
 }

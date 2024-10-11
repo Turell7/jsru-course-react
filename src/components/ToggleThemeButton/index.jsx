@@ -1,4 +1,4 @@
-import { useTheme } from "../ThemeContext"
+import { useTheme } from "../ThemeContext/hooks"
 import styles from "./styles.module.css"
 
 export const TooggleThemeButton = () => {
