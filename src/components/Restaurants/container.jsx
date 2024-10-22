@@ -1,9 +1,26 @@
 import { useSelector } from "react-redux"
 import { Restaurants } from "."
-import { selectRestaurantsIdName } from "../../redux/entities/restaurant"
+import { selectRequestStatus, selectRestaurantsIds } from "../../redux/entities/restaurant"
+import { useDispatch } from "react-redux"
+import { useEffect } from "react"
+import { getRestaurants } from "../../redux/entities/restaurant/get-restaurant"
 
 export const RestaurantsContainer = () => {
-const restaurantsName = useSelector(selectRestaurantsIdName)
+const restaurantsIds = useSelector(selectRestaurantsIds)
+const requestStatus = useSelector(selectRequestStatus)
+const dispatch = useDispatch()
 
-    return <Restaurants restaurantsName={restaurantsName}/>
+useEffect(() => {
+    dispatch(getRestaurants())
+}, [dispatch])
+
+if (requestStatus === "idle" || requestStatus === "pending") {
+    return "Loading"
+}
+
+if (requestStatus === "rejected") {
+    return "error"
+}
+
+    return <Restaurants ids={restaurantsIds}/>
 }
